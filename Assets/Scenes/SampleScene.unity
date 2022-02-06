@@ -258,7 +258,7 @@ MonoBehaviour:
   runSpeed: 10
   jumpForce: 5
   followTarget: {fileID: 522399535}
-  aimSensitivity: 1
+  aimSensitivity: 0.05
 --- !u!114 &98104374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7856,7 +7856,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponToSpawn: {fileID: 1328849386672181109, guid: d07daeb5380b56e47befb17f53a0cd62, type: 3}
+  playerController: {fileID: 98104374}
   weaponSocketLocation: {fileID: 613812753}
+  gripIKSocketLocation: {fileID: 0}
 --- !u!4 &954176531369741749
 Transform:
   m_ObjectHideFlags: 0

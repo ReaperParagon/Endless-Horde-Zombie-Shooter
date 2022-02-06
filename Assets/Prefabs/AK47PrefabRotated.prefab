@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 1301538342008536711}
   - component: {fileID: 1307596951199717771}
   - component: {fileID: 1338625664984644889}
+  - component: {fileID: 5103613557231157883}
   m_Layer: 0
   m_Name: AK47PrefabRotated
   m_TagString: Untagged
@@ -114,6 +115,7 @@ Transform:
   - {fileID: 5786395578037885133}
   - {fileID: 3359150082261641154}
   - {fileID: 1509853968975812545}
+  - {fileID: 7915117489198435806}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -72.752, y: 8.114, z: 81.689}
@@ -180,6 +182,35 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43699194306653770, guid: 5f5046c6433960a4a9fe4aa6edaa5982, type: 2}
+--- !u!114 &5103613557231157883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1328849386672181109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf661b122512e246886a81ffed316dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gripLocation: {fileID: 7915117489198435806}
+  weaponStats:
+    weaponType: 2
+    weaponName: AK-47
+    damage: 35
+    bulletsInClip: 30
+    clipSize: 30
+    fireStartDelay: 0.07
+    fireRate: 0.125
+    weaponFiringPattern: 1
+    fireDistance: 500
+    repeating: 1
+    weaponHitLayers:
+      serializedVersion: 2
+      m_Bits: 4294967295
+  isFiring: 0
+  isReloading: 0
 --- !u!1 &2414508419400196552
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,6 +292,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6651874138625506530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7915117489198435806}
+  m_Layer: 0
+  m_Name: IKGripSocket
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7915117489198435806
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6651874138625506530}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0594, y: 0.0335, z: 0.3308}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1331252523760442035}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8897289094942691312
 GameObject:
   m_ObjectHideFlags: 0
