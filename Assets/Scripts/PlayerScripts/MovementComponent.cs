@@ -32,6 +32,7 @@ public class MovementComponent : MonoBehaviour
     public readonly int isRunningHash = Animator.StringToHash("IsRunning");
     public readonly int isFiringHash = Animator.StringToHash("IsFiring");
     public readonly int isRealoadingHash = Animator.StringToHash("IsReloading");
+    public readonly int aimVerticalHash = Animator.StringToHash("AimVertical");
 
     private void Awake()
     {
@@ -43,7 +44,11 @@ public class MovementComponent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Disable the cursor for gameplay
+        if (!GameManager.instance.cursorActive)
+        {
+            AppEvents.InvokeOnMouseCursorEnable(false);
+        }
     }
 
     // Update is called once per frame
@@ -102,6 +107,9 @@ public class MovementComponent : MonoBehaviour
     }
     public void OnJump(InputValue value)
     {
+        if (playerController.isJumping)
+            return;
+
         playerController.isJumping = value.isPressed;
         rigidbody.AddForce((transform.up + moveDirection) * jumpForce, ForceMode.Impulse);
         playerAnimator.SetBool(isJumpingHash, playerController.isJumping);
@@ -115,6 +123,16 @@ public class MovementComponent : MonoBehaviour
     public void OnLook(InputValue value)
     {
         lookInput = value.Get<Vector2>();
+
+        var angle = followTarget.transform.localEulerAngles.x;
+
+        if (angle > 180)
+        {
+            angle -= 360;
+        }
+
+        float lookParameter = Mathf.InverseLerp(-20, 40, angle);
+        playerAnimator.SetFloat(aimVerticalHash, lookParameter);
 
         // If we aim up, down, adjust animations to have a mask that will let us properly animate aim
     }
