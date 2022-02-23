@@ -89,9 +89,9 @@ public class MovementComponent : MonoBehaviour
         moveDirection = transform.forward * inputVector.y + transform.right * inputVector.x;
         float currentSpeed = playerController.isRunning ? runSpeed : walkSpeed;
 
-        Vector3 movementDirection = moveDirection * (currentSpeed * Time.deltaTime);
+        Vector3 movementDirection = moveDirection * (currentSpeed);
 
-        transform.position += movementDirection;
+        rigidbody.velocity = movementDirection;
     }
 
     public void OnMovement(InputValue value)
