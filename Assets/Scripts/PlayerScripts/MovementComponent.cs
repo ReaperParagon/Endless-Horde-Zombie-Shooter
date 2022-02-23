@@ -11,6 +11,8 @@ public class MovementComponent : MonoBehaviour
     float runSpeed = 10;
     [SerializeField]
     float jumpForce = 5;
+    [SerializeField]
+    private PlayerStats stats;
 
     // Components
     private PlayerController playerController;
@@ -89,7 +91,7 @@ public class MovementComponent : MonoBehaviour
         moveDirection = transform.forward * inputVector.y + transform.right * inputVector.x;
         float currentSpeed = playerController.isRunning ? runSpeed : walkSpeed;
 
-        Vector3 movementDirection = moveDirection * (currentSpeed);
+        Vector3 movementDirection = moveDirection * (stats.speedMultiplier * currentSpeed);
 
         rigidbody.velocity = movementDirection;
     }

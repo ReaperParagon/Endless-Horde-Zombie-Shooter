@@ -2353,9 +2353,11 @@ GameObject:
   - component: {fileID: 7592040168060383591}
   - component: {fileID: 7592040168060383590}
   - component: {fileID: 7592040168060383589}
+  - component: {fileID: 8102341082173181866}
+  - component: {fileID: 7689926819323538068}
   m_Layer: 0
   m_Name: Finn
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2478,6 +2480,7 @@ MonoBehaviour:
   walkSpeed: 5
   runSpeed: 10
   jumpForce: 5
+  stats: {fileID: 8102341082173181866}
   followTarget: {fileID: 8102341081082007368}
   aimSensitivity: 0.05
 --- !u!54 &7592040168060383590
@@ -2512,6 +2515,34 @@ MonoBehaviour:
   playerController: {fileID: 7592040168060383608}
   weaponSocketLocation: {fileID: 8102341081500165076}
   gripIKSocketLocation: {fileID: 0}
+--- !u!114 &8102341082173181866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7592040168060383588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a36b396ca31293b4198a2236f32a80dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedMultiplier: 1
+  damageMultiplier: 1
+  health: 100
+--- !u!114 &7689926819323538068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7592040168060383588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f7be164cc55a4745a889c7cd79d00b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vCamera: {fileID: 0}
 --- !u!1 &7680943056217805375
 GameObject:
   m_ObjectHideFlags: 0
