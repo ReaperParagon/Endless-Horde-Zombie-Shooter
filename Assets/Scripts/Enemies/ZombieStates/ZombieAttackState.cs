@@ -7,6 +7,8 @@ public class ZombieAttackState : ZombieStates
     GameObject followTarget;
     float attackRange = 2;
 
+    private IDamagable damagableObject;
+
     int movementZHash = Animator.StringToHash("MovementZ");
     int isAttackingHash = Animator.StringToHash("isAttacking");
 
@@ -14,6 +16,8 @@ public class ZombieAttackState : ZombieStates
     {
         followTarget = _followTarget;
         UpdateInterval = 2;
+
+        damagableObject = followTarget.GetComponent<IDamagable>();
     }
 
 
@@ -31,15 +35,19 @@ public class ZombieAttackState : ZombieStates
     public override void IntervalUpdate()
     {
         base.IntervalUpdate();
+        damagableObject?.TakeDamage(ownerZombie.zombieDamage);
     }
 
     public override void Update()
     {
         base.Update();
+
+        if (followTarget == null) return;
+
         ownerZombie.transform.LookAt(followTarget.transform.position, Vector3.up);
 
         float distanceBetween = Vector2.Distance(ownerZombie.transform.position, followTarget.transform.position);
-        if (distanceBetween < attackRange)
+        if (distanceBetween > attackRange)
         {
             stateMachine.ChangeState(ZombieStateType.Following);
         }

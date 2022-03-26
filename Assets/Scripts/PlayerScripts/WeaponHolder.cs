@@ -96,6 +96,8 @@ public class WeaponHolder : MonoBehaviour
     // Action of reloading
     public void StartReloading()
     {
+        // Return if we're already reloading or if we have the maximum clip size
+        if (equippedWeapon.isReloading || equippedWeapon.weaponStats.bulletsInClip >= equippedWeapon.weaponStats.clipSize) return;
 
         if (playerController.isFiring)
         {
