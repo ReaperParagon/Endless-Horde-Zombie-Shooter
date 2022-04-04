@@ -9,7 +9,7 @@ public class EquippableItem : ItemScript
         get => isEquipped;
         set
         {
-            Equipped = value;
+            isEquipped = value;
             OnEquipStatusChange?.Invoke();
         }
     }

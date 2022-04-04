@@ -22,7 +22,6 @@ public class CameraController : MonoBehaviour
     {
         for (float f = vCamera.m_Lens.FieldOfView; Mathf.Abs(f - FOV) > 0.01f; f = Mathf.Lerp(f, FOV, Time.fixedDeltaTime))
         {
-            print(FOV + ",   " + f);
             vCamera.m_Lens.FieldOfView = f;
             yield return new WaitForFixedUpdate();
         }

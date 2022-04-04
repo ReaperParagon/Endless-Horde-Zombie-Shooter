@@ -33,6 +33,9 @@ public struct WeaponStats
 
 public class WeaponComponent : MonoBehaviour
 {
+    [Header("Prefab")]
+    public GameObject weaponPrefab;
+
     public Transform gripLocation;
     public Transform firingEffectLocation;
 

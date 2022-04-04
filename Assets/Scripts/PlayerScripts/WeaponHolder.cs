@@ -26,20 +26,38 @@ public class WeaponHolder : MonoBehaviour
     public readonly int isRealoadingHash = Animator.StringToHash("IsReloading");
 
 
+    private void OnEnable()
+    {
+        PlayerEvents.OnEquipWeapon += EquipWeapon;
+    }
+
+    private void OnDisable()
+    {
+        PlayerEvents.OnEquipWeapon -= EquipWeapon;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         playerController = GetComponent<PlayerController>();
         animator = GetComponent<Animator>();
-        GameObject spawnedWeapon = Instantiate(weaponToSpawn, weaponSocketLocation.transform.position, weaponSocketLocation.transform.rotation, weaponSocketLocation.transform);
 
+        PlayerEvents.InvokeOnEquipWeapon(weaponToSpawn.GetComponent<WeaponComponent>());
+    }
+
+    private void EquipWeapon(WeaponComponent weaponToEquip)
+    {
+        // Remove Old Weapon
+        if (equippedWeapon) Destroy(equippedWeapon.gameObject);
+
+        GameObject spawnedWeapon = Instantiate(weaponToEquip.weaponPrefab, weaponSocketLocation.transform.position, weaponSocketLocation.transform.rotation, weaponSocketLocation.transform);
+        
         equippedWeapon = spawnedWeapon.GetComponent<WeaponComponent>();
         equippedWeapon.Initialize(this);
 
         PlayerEvents.InvokeOnWeaponEquipped(equippedWeapon);
 
         gripIKSocketLocation = equippedWeapon.gripLocation;
-
     }
 
     // Update is called once per frame
@@ -56,6 +74,8 @@ public class WeaponHolder : MonoBehaviour
 
     public void OnFire(InputValue value)
     {
+        if (playerController.isInventoryOpen) return;
+
         firingPressed = value.isPressed;
         if (firingPressed)
         {

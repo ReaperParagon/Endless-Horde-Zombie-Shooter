@@ -11,11 +11,13 @@ public class PlayerController : MonoBehaviour
     public bool isRunning;
     public bool isAiming;
 
+    public bool isInventoryOpen = false;
+
     public InventoryComponent inventory;
-    public InventoryCanvas invCanvas;
+    public GameUIController uiController;
 
     public void OnInventory(InputValue value)
     {
-        invCanvas.gameObject.SetActive(!invCanvas.gameObject.activeSelf);
+        isInventoryOpen = uiController.ToggleInventoryMenu();
     }
 }

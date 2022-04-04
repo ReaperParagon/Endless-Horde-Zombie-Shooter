@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class PlayerEvents : MonoBehaviour
 {
+    public delegate void OnEquipWeaponEvent(WeaponComponent weaponComponent);
+
+    public static event OnEquipWeaponEvent OnEquipWeapon;
+
+    public static void InvokeOnEquipWeapon(WeaponComponent weaponComponent)
+    {
+        OnEquipWeapon?.Invoke(weaponComponent);
+    }
+
     public delegate void OnWeaponEquippedEvent(WeaponComponent weaponComponent);
 
     public static event OnWeaponEquippedEvent OnWeaponEquipped;

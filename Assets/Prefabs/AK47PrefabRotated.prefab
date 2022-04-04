@@ -325,6 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf661b122512e246886a81ffed316dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 1328849386672181109}
   gripLocation: {fileID: 7915117489198435806}
   firingEffectLocation: {fileID: 5605823948633032590}
   firingEffect: {fileID: 6229838419764730882}
@@ -337,12 +338,12 @@ MonoBehaviour:
     fireStartDelay: 0.07
     fireRate: 0.125
     weaponFiringPattern: 1
-    fireDistance: 500
+    fireDistance: 1000
     repeating: 1
     weaponHitLayers:
       serializedVersion: 2
-      m_Bits: 4294967295
-    totalBullets: 500
+      m_Bits: 1
+    totalBullets: 470
   isFiring: 0
   isReloading: 0
   mainCamera: {fileID: 0}

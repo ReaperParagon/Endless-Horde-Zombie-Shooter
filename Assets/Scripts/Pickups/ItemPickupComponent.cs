@@ -18,10 +18,13 @@ public class ItemPickupComponent : MonoBehaviour
 
     ItemScript itemInstance;
 
+    PlayerController playerController;
+
     // Start is called before the first frame update
     void Start()
     {
         InstantiateItem();
+        playerController = FindObjectOfType<PlayerController>();
     }
 
     private void InstantiateItem()
@@ -44,10 +47,9 @@ public class ItemPickupComponent : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) return;
+        if (!other.CompareTag("Player")) return;
 
-        // Add to inventory here
-        // Get reference to player inventory, add item to it
+        playerController.inventory.AddItem(itemInstance);
 
         Destroy(gameObject);
     }

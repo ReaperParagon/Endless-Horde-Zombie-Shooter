@@ -11,13 +11,16 @@ public class WeaponItem : EquippableItem
     {
         if (Equipped)
         {
+
             // Unequip from inventory
             // And Controller
         }
         else
         {
-            // Invoke on weapon equipped from player events here
-            // Equip weaopn from weapon holder on player controller
+            GameObject weapon = Instantiate(itemPrefab);
+            weapon.GetComponent<WeaponComponent>().weaponStats = weaponStats;
+
+            PlayerEvents.InvokeOnEquipWeapon(weapon.GetComponent<WeaponComponent>());
         }
 
         base.UseItem(playerController);

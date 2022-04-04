@@ -56,6 +56,12 @@ public class MovementComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateLook();
+        UpdateMovement();
+    }
+
+    private void UpdateLook()
+    {
         // Aiming / Looking
         // Horizontal rotation
         followTarget.transform.rotation *= Quaternion.AngleAxis(lookInput.x * aimSensitivity, Vector3.up);
@@ -84,6 +90,10 @@ public class MovementComponent : MonoBehaviour
 
         followTarget.transform.localEulerAngles = new Vector3(angles.x, 0, 0);
 
+    }
+
+    private void UpdateMovement()
+    {
         // Movement
         if (playerController.isJumping) return;
         if (!(inputVector.magnitude > 0)) moveDirection = Vector3.zero;
@@ -95,6 +105,9 @@ public class MovementComponent : MonoBehaviour
 
         rigidbody.velocity = movementDirection;
     }
+
+
+    /// Input System ///
 
     public void OnMovement(InputValue value)
     {
@@ -124,6 +137,8 @@ public class MovementComponent : MonoBehaviour
 
     public void OnLook(InputValue value)
     {
+        if (playerController.isInventoryOpen) return;
+
         lookInput = value.Get<Vector2>();
 
         var angle = followTarget.transform.localEulerAngles.x;
@@ -135,11 +150,7 @@ public class MovementComponent : MonoBehaviour
 
         float lookParameter = Mathf.InverseLerp(-20, 40, angle);
         playerAnimator.SetFloat(aimVerticalHash, lookParameter);
-
-        // If we aim up, down, adjust animations to have a mask that will let us properly animate aim
     }
-
-    
 
 
     private void OnCollisionEnter(Collision collision)

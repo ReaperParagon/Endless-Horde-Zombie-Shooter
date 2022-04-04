@@ -37,4 +37,16 @@ public class InventoryCanvas : GameHUDWidget
 
         ItemDisplayPanel.PopulatePanel(PlayerController.inventory.GetItemsOfCategory(category));
     }
+
+    public override void EnableWidget()
+    {
+        base.EnableWidget();
+        AppEvents.InvokeOnMouseCursorEnable(true);
+    }
+
+    public override void DisableWidget()
+    {
+        AppEvents.InvokeOnMouseCursorEnable(false);
+        base.DisableWidget();
+    }
 }

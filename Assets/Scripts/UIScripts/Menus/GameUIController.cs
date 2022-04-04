@@ -35,10 +35,26 @@ public class GameUIController : MonoBehaviour
 
     public void EnableInventoryMenu()
     {
-        if (ActiveWidget) ActiveWidget.DisableWidget();
-
         ActiveWidget = InventoryCanvas;
         ActiveWidget.EnableWidget();
+    }
+
+    /// <summary>
+    /// Toggle's the inventory visibility
+    /// </summary>
+    /// <returns>If the inventory is now open</returns>
+    public bool ToggleInventoryMenu()
+    {
+        if (InventoryCanvas.gameObject.activeInHierarchy)
+        {
+            EnableGameMenu();
+            return false;
+        }
+        else
+        {
+            EnableInventoryMenu();
+            return true;
+        }
     }
 
     public void DisableAllMenus()

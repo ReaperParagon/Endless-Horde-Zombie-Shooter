@@ -33,10 +33,7 @@ public class WeaponAmmoUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!weaponComponent)
-        {
-            return;
-        }
+        if (!weaponComponent) return;
 
         weaponNameText.text = weaponComponent.weaponStats.weaponName;
         currentBulletCountText.text = weaponComponent.weaponStats.bulletsInClip.ToString();

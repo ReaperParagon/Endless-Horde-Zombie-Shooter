@@ -29,7 +29,6 @@ public class AK47Component : WeaponComponent
             }
 
             Ray screenRay = mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
-            print("Bullet Count: " + weaponStats.bulletsInClip);
             if (!Physics.Raycast(screenRay, out RaycastHit hit, weaponStats.fireDistance, weaponStats.weaponHitLayers)) return;
 
             hitLocation = hit.point;
