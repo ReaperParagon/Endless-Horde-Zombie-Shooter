@@ -128,4 +128,9 @@ public class WeaponComponent : MonoBehaviour
             weaponStats.totalBullets = 0;
         }
     }
+
+    public void AddAmmo(int ammo)
+    {
+        weaponStats.totalBullets += ammo;
+    }
 }

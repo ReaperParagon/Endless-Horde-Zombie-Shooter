@@ -25,4 +25,9 @@ public class WeaponItem : EquippableItem
 
         base.UseItem(playerController);
     }
+
+    public void RefillAmmo(int ammo)
+    {
+        weaponStats.totalBullets += ammo;
+    }
 }

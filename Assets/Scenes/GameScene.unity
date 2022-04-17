@@ -617,7 +617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 478808222928238738, guid: 80a64768bd420b748bf8f0a1e2a89cd5, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 478808222928238738, guid: 80a64768bd420b748bf8f0a1e2a89cd5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19057,6 +19057,63 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &872076152
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 478808222928238737, guid: a71658aa162cd1b4f96bcae03fd4a0df, type: 3}
+      propertyPath: m_Name
+      value: AmmoPickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 478808222928238738, guid: a71658aa162cd1b4f96bcae03fd4a0df, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 478808222928238738, guid: a71658aa162cd1b4f96bcae03fd4a0df, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.275287
+      objectReference: {fileID: 0}
+    - target: {fileID: 478808222928238738, guid: a71658aa162cd1b4f96bcae03fd4a0df, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 478808222928238738, guid: a71658aa162cd1b4f96bcae03fd4a0df, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.17736912
+      objectReference: {fileID: 0}
+    - target: {fileID: 478808222928238738, guid: a71658aa162cd1b4f96bcae03fd4a0df, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 478808222928238738, guid: a71658aa162cd1b4f96bcae03fd4a0df, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478808222928238738, guid: a71658aa162cd1b4f96bcae03fd4a0df, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478808222928238738, guid: a71658aa162cd1b4f96bcae03fd4a0df, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478808222928238738, guid: a71658aa162cd1b4f96bcae03fd4a0df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478808222928238738, guid: a71658aa162cd1b4f96bcae03fd4a0df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 478808222928238738, guid: a71658aa162cd1b4f96bcae03fd4a0df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a71658aa162cd1b4f96bcae03fd4a0df, type: 3}
 --- !u!43 &873761879
 Mesh:
   m_ObjectHideFlags: 0
@@ -31002,7 +31059,7 @@ RectTransform:
   - {fileID: 1930482949}
   - {fileID: 1427377732}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -31150,7 +31207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7400053495775908357, guid: 8c13c3d4c71f3be40a06fbb82a6a2b80, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7400053495775908357, guid: 8c13c3d4c71f3be40a06fbb82a6a2b80, type: 3}
       propertyPath: m_AnchorMax.x
@@ -54049,7 +54106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 478808222928238738, guid: 211d3ca2d358a9c4c952371482ddb3f1, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 478808222928238738, guid: 211d3ca2d358a9c4c952371482ddb3f1, type: 3}
       propertyPath: m_LocalPosition.x

@@ -11,7 +11,7 @@ public class WeaponHolder : MonoBehaviour
     public PlayerController playerController;
     Animator animator;
     Sprite crosshairImage;
-    WeaponComponent equippedWeapon;
+    public WeaponComponent equippedWeapon;
 
     [SerializeField]
     GameObject weaponSocketLocation;
