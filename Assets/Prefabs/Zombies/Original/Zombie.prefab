@@ -3296,6 +3296,7 @@ GameObject:
   - component: {fileID: 7218244159424640216}
   - component: {fileID: 5190559947657734161}
   - component: {fileID: 7272883679836389772}
+  - component: {fileID: 3256671858639437076}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -3466,6 +3467,55 @@ CapsuleCollider:
   m_Height: 1.7
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &3256671858639437076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418193975600942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0310d70979eaa44429fb54ed755d425e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modelList:
+  - {fileID: 1405812215667218}
+  - {fileID: 1629291282787016}
+  - {fileID: 1817063110553406}
+  - {fileID: 1170678990886658}
+  - {fileID: 1177339439069308}
+  - {fileID: 1748665293149880}
+  - {fileID: 1092556488114106}
+  - {fileID: 1635988967215382}
+  - {fileID: 1374947687261396}
+  - {fileID: 1483869819391620}
+  - {fileID: 1134006723467140}
+  - {fileID: 1273974943711716}
+  - {fileID: 1430034598689156}
+  - {fileID: 1701255818250794}
+  - {fileID: 1995403694545488}
+  - {fileID: 1150926542789866}
+  - {fileID: 1816275834592480}
+  - {fileID: 1326092869821786}
+  - {fileID: 1024597680522302}
+  - {fileID: 1681389450948628}
+  - {fileID: 1695257667922630}
+  - {fileID: 1579712924896360}
+  - {fileID: 1866359578656096}
+  - {fileID: 1713630384959468}
+  - {fileID: 1616325098761808}
+  - {fileID: 1027055053044292}
+  - {fileID: 1718954873868720}
+  - {fileID: 1818827709490124}
+  - {fileID: 1003558422624600}
+  - {fileID: 1165343472653704}
+  - {fileID: 1253801808798326}
+  - {fileID: 1977716463237112}
+  - {fileID: 1913734829866394}
+  - {fileID: 1213179522021810}
+  - {fileID: 1352041629555138}
+  - {fileID: 1191463865724140}
 --- !u!1 &1423411692011380
 GameObject:
   m_ObjectHideFlags: 0
