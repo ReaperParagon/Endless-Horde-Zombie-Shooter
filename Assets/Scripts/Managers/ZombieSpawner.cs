@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class ZombieSpawner : MonoBehaviour
 {
-    public int numberOfZombiesToSpawn;
+    public int numberOfZombiesPerSpawn = 3;
+    public float spawnTimer = 2.0f;
+
     public GameObject[] zombiePrefabs;
     public SpawnerVolume[] spawnerVolumes;
 
@@ -14,10 +16,20 @@ public class ZombieSpawner : MonoBehaviour
     void Start()
     {
         followGameObject = GameObject.FindGameObjectWithTag("Player");
-        for (int i = 0; i < numberOfZombiesToSpawn; i++)
+
+        StartCoroutine(SpawnTimer_Coroutine());
+    }
+
+    private IEnumerator SpawnTimer_Coroutine()
+    {
+        for (int i = 0; i < numberOfZombiesPerSpawn; i++)
         {
             SpawnZombie();
         }
+
+        yield return new WaitForSeconds(spawnTimer);
+
+        StartCoroutine(SpawnTimer_Coroutine());
     }
 
     void SpawnZombie()
