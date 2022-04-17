@@ -46,6 +46,14 @@ public class WeaponComponent : MonoBehaviour
     [SerializeField]
     public WeaponStats weaponStats;
 
+    public float realDamage
+    {
+        get
+        {
+            return weaponStats.damage * weaponHolder.GetComponent<PlayerStats>().damageMultiplier;
+        }
+    }
+
     public bool isFiring = false;
     public bool isReloading = false;
 
@@ -132,5 +140,11 @@ public class WeaponComponent : MonoBehaviour
     public void AddAmmo(int ammo)
     {
         weaponStats.totalBullets += ammo;
+    }
+
+    protected void DealDamage(RaycastHit hitInfo)
+    {
+        IDamagable damageable = hitInfo.collider.GetComponent<IDamagable>();
+        damageable?.TakeDamage(realDamage);
     }
 }

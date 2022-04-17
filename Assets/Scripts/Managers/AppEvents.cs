@@ -12,4 +12,24 @@ public class AppEvents
     {
         MouseCursorEnabled?.Invoke(enabled);
     }
+
+
+    public delegate void OnGameCompletion(bool win);
+
+    public static event OnGameCompletion GameComplete;
+
+    public static void InvokeOnGameCompletion(bool win)
+    {
+        GameComplete?.Invoke(win);
+    }
+
+
+    public delegate void OnTimerUpdate(float timer);
+
+    public static event OnTimerUpdate UpdateTimer;
+
+    public static void InvokeOnTimerUpdate(float timer)
+    {
+        UpdateTimer?.Invoke(timer);
+    }
 }

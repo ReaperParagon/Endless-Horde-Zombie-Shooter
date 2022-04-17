@@ -8,6 +8,7 @@ public class PlayerStats : MonoBehaviour
     public float damageMultiplier = 1.0f;
 
     private IEnumerator SpeedChangeCoroutine_Ref;
+    private IEnumerator DamageChangeCoroutine_Ref;
 
     public void TemporarySpeedChange(float speedMul, float duration)
     {
@@ -27,5 +28,25 @@ public class PlayerStats : MonoBehaviour
         speedMultiplier = 1.0f;
 
         SpeedChangeCoroutine_Ref = null;
+    }
+
+    public void TemporaryDamageChange(float speedMul, float duration)
+    {
+        if (DamageChangeCoroutine_Ref != null)
+            StopCoroutine(DamageChangeCoroutine_Ref);
+
+        DamageChangeCoroutine_Ref = TemporaryDamageChange_Coroutine(speedMul, duration);
+        StartCoroutine(DamageChangeCoroutine_Ref);
+    }
+
+    private IEnumerator TemporaryDamageChange_Coroutine(float dmgMul, float duration)
+    {
+        damageMultiplier = dmgMul;
+
+        yield return new WaitForSeconds(duration);
+
+        damageMultiplier = 1.0f;
+
+        DamageChangeCoroutine_Ref = null;
     }
 }

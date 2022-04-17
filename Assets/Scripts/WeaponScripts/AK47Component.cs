@@ -4,18 +4,6 @@ using UnityEngine;
 
 public class AK47Component : WeaponComponent
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     protected override void FireWeapon()
     {
         Vector3 hitLocation;
@@ -41,11 +29,5 @@ public class AK47Component : WeaponComponent
         {
             weaponHolder.StartReloading();
         }
-    }
-
-    void DealDamage(RaycastHit hitInfo)
-    {
-        IDamagable damageable = hitInfo.collider.GetComponent<IDamagable>();
-        damageable?.TakeDamage(weaponStats.damage);
     }
 }
