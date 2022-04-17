@@ -6,7 +6,6 @@ public class PlayerStats : MonoBehaviour
 {
     public float speedMultiplier = 1.0f;
     public float damageMultiplier = 1.0f;
-    public float health = 100.0f;
 
     private IEnumerator SpeedChangeCoroutine_Ref;
 

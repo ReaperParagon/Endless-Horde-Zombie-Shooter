@@ -35,6 +35,9 @@ public class ZombieAttackState : ZombieStates
     public override void IntervalUpdate()
     {
         base.IntervalUpdate();
+
+        if (followTarget == null) return;
+
         damagableObject?.TakeDamage(ownerZombie.zombieDamage);
     }
 

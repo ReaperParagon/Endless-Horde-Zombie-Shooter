@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d1b19fc5f4576a4fad88a2596bb0e0c, type: 3}
+  m_Script: {fileID: 11500000, guid: 310811da22a4d2f49aede63022157d96, type: 3}
   m_Name: Potion
   m_EditorClassIdentifier: 
   itemName: Potion
@@ -18,4 +18,4 @@ MonoBehaviour:
   stackable: 1
   maxSize: 10
   amountValue: 1
-  effect: 30
+  health: 30
