@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2319ef2e8b4733341bc96dd3a0333d49, type: 3}
+  m_Name: Speed Pickup
+  m_EditorClassIdentifier: 
+  itemName: Speed Boost
+  itemCategory: 2
+  itemPrefab: {fileID: 7634069003450310017, guid: e93ac483ca24b1648bbdc7dc8f624072, type: 3}
+  stackable: 1
+  maxSize: 5
+  amountValue: 1
+  effect: 1
+  pStats: {fileID: 0}
+  speed: 1.5
+  newFOV: 110
+  duration: 15

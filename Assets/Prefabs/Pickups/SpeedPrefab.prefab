@@ -29,12 +29,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7634069003450310029}
   - component: {fileID: 7634069003450310030}
-  - component: {fileID: 7634069003450310016}
-  - component: {fileID: 7634069003450310028}
   - component: {fileID: 1261694248}
   - component: {fileID: 1261694247}
   m_Layer: 0
-  m_Name: SpeedPickup
+  m_Name: SpeedPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,33 +61,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7634069003450310017}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!135 &7634069003450310016
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7634069003450310017}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7634069003450310028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7634069003450310017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2319ef2e8b4733341bc96dd3a0333d49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1.5
-  newFOV: 90
 --- !u!198 &1261694248
 ParticleSystem:
   m_ObjectHideFlags: 0

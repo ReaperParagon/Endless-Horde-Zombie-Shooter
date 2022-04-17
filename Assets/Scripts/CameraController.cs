@@ -7,15 +7,42 @@ public class CameraController : MonoBehaviour
 {
     public CinemachineVirtualCamera vCamera;
 
-    private IEnumerator FOVCoroutine;
+    private IEnumerator TempFOVCoroutine_Ref;
+    private IEnumerator FOVCoroutine_Ref;
+    private float startFOV;
+
+    private void Awake()
+    {
+        startFOV = vCamera.m_Lens.FieldOfView;
+    }
+
+    public void TemporaryChangeFOV(float FOV, float duration)
+    {
+        if (TempFOVCoroutine_Ref != null)
+            StopCoroutine(TempFOVCoroutine_Ref);
+
+        TempFOVCoroutine_Ref = TemporaryChangeFOV_Coroutine(FOV, duration);
+        StartCoroutine(TempFOVCoroutine_Ref);
+    }
+
+    public IEnumerator TemporaryChangeFOV_Coroutine(float FOV, float duration)
+    {
+        GoToFOV(FOV);
+
+        yield return new WaitForSeconds(duration);
+
+        GoToFOV(startFOV);
+
+        TempFOVCoroutine_Ref = null;
+    }
 
     public void GoToFOV(float FOV)
     {
-        if (FOVCoroutine != null)
-            StopCoroutine(FOVCoroutine);
+        if (FOVCoroutine_Ref != null)
+            StopCoroutine(FOVCoroutine_Ref);
 
-        FOVCoroutine = GoToFOV_Coroutine(FOV);
-        StartCoroutine(FOVCoroutine);
+        FOVCoroutine_Ref = GoToFOV_Coroutine(FOV);
+        StartCoroutine(FOVCoroutine_Ref);
     }
 
     public IEnumerator GoToFOV_Coroutine(float FOV)
@@ -26,6 +53,6 @@ public class CameraController : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
 
-        FOVCoroutine = null;
+        FOVCoroutine_Ref = null;
     }
 }

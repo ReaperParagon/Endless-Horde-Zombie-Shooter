@@ -3,31 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class SpeedPickup : PickupScript
+[CreateAssetMenu(fileName = "Speed Pickup", menuName = "Item/SpeedPickup", order = 2)]
+public class SpeedPickup : ConsumableItem
 {
+    public PlayerStats pStats;
+
     public float speed = 1.5f;
     public float newFOV = 70.0f;
 
-    public override void UsePickup(PlayerStats player)
-    {
-        currentPlayer = player;
+    public float duration = 5.0f;
 
-        currentPlayer.speedMultiplier = speed;
+    public override void UseItem(PlayerController playerController)
+    {
+        pStats = playerController.GetComponent<PlayerStats>();
+        pStats.TemporarySpeedChange(speed, duration);
+
+        ChangeFOV(playerController.GetComponent<CameraController>());
+
+        base.UseItem(playerController);
     }
 
     public void ChangeFOV(CameraController cameraController)
     {
-        cameraController.GoToFOV(newFOV);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            UsePickup(other.GetComponent<PlayerStats>());
-            ChangeFOV(other.GetComponent<CameraController>());
-
-            gameObject.SetActive(false);
-        }
+        cameraController.TemporaryChangeFOV(newFOV, duration);
     }
 }

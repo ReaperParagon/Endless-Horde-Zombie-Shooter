@@ -36,7 +36,10 @@ public abstract class ItemScript : ScriptableObject
     public virtual void DeleteItem(PlayerController playerController)
     {
         OnItemDestroyed?.Invoke();
+
         // Delete item from inventory system
+
+        playerController.inventory.DeleteItem(this);
     }
 
     public virtual void DropItem(PlayerController controller)
