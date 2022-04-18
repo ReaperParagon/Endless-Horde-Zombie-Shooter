@@ -19,5 +19,6 @@ MonoBehaviour:
   maxSize: 5
   amountValue: 1
   pStats: {fileID: 0}
+  newFOV: 40
   damageMultiplier: 2
   duration: 30
