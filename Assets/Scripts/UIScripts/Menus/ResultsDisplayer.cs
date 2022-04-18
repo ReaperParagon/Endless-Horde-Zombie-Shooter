@@ -7,7 +7,7 @@ public class ResultsDisplayer : MonoBehaviour
 {
     public TextMeshProUGUI resultsText;
 
-    private void Awake()
+    private void Start()
     {
         AppEvents.InvokeOnMouseCursorEnable(true);
 

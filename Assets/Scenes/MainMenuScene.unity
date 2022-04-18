@@ -21950,9 +21950,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Quit
-
-'
+  m_text: Back
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 008bb223069a69e4d9ca739aa6bba54e, type: 2}
   m_sharedMaterial: {fileID: 8301202054654170091, guid: 008bb223069a69e4d9ca739aa6bba54e, type: 2}
