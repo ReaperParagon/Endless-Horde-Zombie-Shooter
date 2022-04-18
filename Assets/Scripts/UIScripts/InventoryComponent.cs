@@ -12,6 +12,8 @@ public class InventoryComponent : MonoBehaviour
     private void Awake()
     {
         Controller = GetComponent<PlayerController>();
+
+        WeaponItem.equippedWeapon = null;
     }
 
     public List<ItemScript> GetItemList() => Items;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -26,10 +27,21 @@ public class GameManager : Singleton<GameManager>
     private void OnEnable()
     {
         AppEvents.MouseCursorEnabled += EnableCursor;
+
+        SceneManager.sceneLoaded += ResetTime;
     }
 
     private void OnDisable()
     {
         AppEvents.MouseCursorEnabled -= EnableCursor;
+
+        SceneManager.sceneLoaded -= ResetTime;
+    }
+
+    private void ResetTime(Scene _, LoadSceneMode __)
+    {
+        Time.timeScale = 1.0f;
+
+        print("Scene Loaded...");
     }
 }

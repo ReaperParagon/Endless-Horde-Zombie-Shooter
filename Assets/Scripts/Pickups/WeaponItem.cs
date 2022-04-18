@@ -11,7 +11,7 @@ public class WeaponItem : EquippableItem
 
     private GameObject weapon;
 
-    private static WeaponItem equippedWeapon;
+    public static WeaponItem equippedWeapon;
 
     private void Awake()
     {
