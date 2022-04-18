@@ -2516,8 +2516,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f561b62537f3540488c3bc8c51b6fcf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponToSpawn: {fileID: 1328849386672181109, guid: d07daeb5380b56e47befb17f53a0cd62, type: 3}
+  weaponToSpawn: {fileID: 11400000, guid: eca26f5ac61309b42bd1fd71308fb54e, type: 2}
   playerController: {fileID: 7592040168060383608}
+  equippedWeapon: {fileID: 0}
   weaponSocketLocation: {fileID: 8102341081500165076}
   gripIKSocketLocation: {fileID: 0}
 --- !u!114 &8102341082173181866
@@ -2534,7 +2535,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedMultiplier: 1
   damageMultiplier: 1
-  health: 100
 --- !u!114 &7689926819323538068
 MonoBehaviour:
   m_ObjectHideFlags: 0

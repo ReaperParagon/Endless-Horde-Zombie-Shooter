@@ -6,12 +6,14 @@ public enum WeaponType
 {
     None,
     Pistol,
-    MachineGun
+    MachineGun,
+    Shotgun,
+    Sniper
 }
 
 public enum WeaponFiringPattern
 {
-    SemiAutio, FullAutio, ThreeShotBurst, FiveShotBurst
+    SemiAutio, FullAutio, ThreeShotBurst, FiveShotBurst, Spread
 }
 
 [System.Serializable]
@@ -29,6 +31,7 @@ public struct WeaponStats
     public bool repeating;
     public LayerMask weaponHitLayers;
     public int totalBullets;
+    public int bulletsPerShot;
 }
 
 public class WeaponComponent : MonoBehaviour
@@ -74,11 +77,15 @@ public class WeaponComponent : MonoBehaviour
     public void Initialize(WeaponHolder _weaponHolder)
     {
         weaponHolder = _weaponHolder;
+
+        var main = firingEffect.main;
+        main.loop = weaponStats.repeating;
     }
 
     public virtual void StartFiringWeapon()
     {
         isFiring = true;
+
         if (weaponStats.repeating)
         {
             InvokeRepeating(nameof(FireWeapon), weaponStats.fireStartDelay, weaponStats.fireRate);

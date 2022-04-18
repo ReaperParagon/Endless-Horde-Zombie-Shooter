@@ -39,7 +39,7 @@ public class ZombieSpawner : MonoBehaviour
 
         if (!followGameObject) return;
 
-        GameObject zombie = Instantiate(zombieToSpawn, spawnVolume.GetPositionInBounds(), spawnVolume.transform.rotation);
+        GameObject zombie = Instantiate(zombieToSpawn, spawnVolume.GetPositionInBounds(), spawnVolume.transform.rotation, gameObject.transform);
 
         zombie.GetComponent<ZombieComponent>().Initialize(followGameObject);
     }

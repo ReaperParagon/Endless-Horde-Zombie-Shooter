@@ -34,7 +34,6 @@ public class IconSlot : MonoBehaviour
 
     public void UseItem()
     {
-        Debug.Log($"{Item.itemName} used!");
         Item.UseItem(Item.controller);
     }
 

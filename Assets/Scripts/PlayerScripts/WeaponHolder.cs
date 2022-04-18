@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class WeaponHolder : MonoBehaviour
 {
     [Header("WeaponToSpawn"), SerializeField]
-    GameObject weaponToSpawn;
+    WeaponItem weaponToSpawn;
 
     public PlayerController playerController;
     Animator animator;
@@ -42,7 +42,10 @@ public class WeaponHolder : MonoBehaviour
         playerController = GetComponent<PlayerController>();
         animator = GetComponent<Animator>();
 
-        PlayerEvents.InvokeOnEquipWeapon(weaponToSpawn.GetComponent<WeaponComponent>());
+        playerController.inventory.AddItem(weaponToSpawn);
+        playerController.inventory.FindItem("Pistol")?.UseItem(playerController);
+
+        PlayerEvents.InvokeOnEquipWeapon(weaponToSpawn.itemPrefab.GetComponent<WeaponComponent>());
     }
 
     private void EquipWeapon(WeaponComponent weaponToEquip)
