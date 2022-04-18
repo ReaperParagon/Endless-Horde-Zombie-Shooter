@@ -9,4 +9,11 @@ public class PlayerHealthComponent : HealthComponent
         base.Start();
         PlayerEvents.InvokeOnHealthInitializeEvent(this);
     }
+
+    public override void Destroy()
+    {
+        AppEvents.InvokeOnGameCompletion(false);
+
+        base.Destroy();
+    }
 }
